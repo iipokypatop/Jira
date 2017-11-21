@@ -32,7 +32,7 @@ class Server extends BaseServer
 
             $this->jiraUserDetailsUrl = Arr::get($clientCredentials, 'user_details_url');
 
-            $this->jiraCertPath = Arr::get($clientCredentials, 'cert_path', $this->getConfig('cert_path', storage_path().'/app/keys/jira.pem'));
+            $this->jiraCertPath = base_path() . '/' . Arr::get($clientCredentials, 'cert_path');
 
             $clientCredentials = $this->createClientCredentials($clientCredentials);
         } elseif (! $clientCredentials instanceof ClientCredentialsInterface) {
