@@ -1,5 +1,5 @@
 {
-    "name": "socialiteproviders/jira",
+    "name": "iipokypatop/socialiteprovidersjira",
     "description": "Jira OAuth1 Provider for Laravel Socialite",
     "license": "MIT",
     "authors": [{

@@ -28,11 +28,11 @@ class Server extends BaseServer
     {
         // Pass through an array or client credentials, we don't care
         if (is_array($clientCredentials)) {
-            $this->jiraBaseUrl = Arr::get($clientCredentials, 'base_url');
+            $this->jiraBaseUrl = Arr::get($clientCredentials, 'base_uri');
 
             $this->jiraUserDetailsUrl = Arr::get($clientCredentials, 'user_details_url');
 
-            $this->jiraCertPath = Arr::get($clientCredentials, 'cert', $this->getConfig('cert_path', storage_path().'/app/keys/jira.pem'));
+            $this->jiraCertPath = Arr::get($clientCredentials, 'cert_path', $this->getConfig('cert_path', storage_path().'/app/keys/jira.pem'));
 
             $clientCredentials = $this->createClientCredentials($clientCredentials);
         } elseif (! $clientCredentials instanceof ClientCredentialsInterface) {
